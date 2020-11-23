@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find([:id])
+    @user = current_user
+    @borrowed_bag = Bag.find(params[:id])
   end
 
   def edit

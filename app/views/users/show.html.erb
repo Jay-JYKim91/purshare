@@ -1,5 +1,8 @@
 <h1>Dashboard</h1>
 
+<p>List of rented bags:</p>
+
+
 <div class="user-info">
   <%= @user.first_name %>
   <%= @user.last_name %>
@@ -8,13 +11,11 @@
 
 <div class="bags-list">
   <div class="bags-rent">
-
+    <%= @borrowed_bag.name %>
   </div>
   <div class="bags-borrow">
 
   </div>
 </div>
-
 <div class="requests">
-
 </div>
