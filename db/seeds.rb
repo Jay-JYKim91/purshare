@@ -10,7 +10,10 @@ User.destroy_all
 
 user1 = User.create(
   email: "jj@gmail.com",
-  password: "lewagon"
+  password: "lewagon",
+  first_name: "John",
+  last_name: "Smith",
+  address: "seoul"
 )
 
 Bag.create(
