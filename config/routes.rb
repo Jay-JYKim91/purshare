@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resource :bags
+  devise_for :users
+  root to: 'pages#home'
+
+  resources :bags, only: [:index, :show, :new, :create] do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :users, only: [:show, :edit, :update]
   # get 'bookings/new'
   # get 'bookings/create'
   # get 'users/show'
@@ -9,7 +15,6 @@ Rails.application.routes.draw do
   # get 'bags/:id'
   # get 'bags/new'
   # get 'bags/create'
-  devise_for :users
-  root to: 'pages#home'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

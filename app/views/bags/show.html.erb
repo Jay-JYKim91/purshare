@@ -4,4 +4,4 @@
 <p><%= @bag.brand %></p>
 <p><%= @bag.description %></p>
 
-<%= link_to "RENT", bookings_new_path %>
+<%= link_to "RENT", new_bag_booking_path(@bag) %>

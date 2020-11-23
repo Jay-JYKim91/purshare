@@ -39,5 +39,3 @@ Bag.create(
   user: user1,
   image:"/assets/gucci.jpg"
   )
-
->>>>>>> bceaad77c9e82638bcf2dd4ee1fdb3d87955661d
