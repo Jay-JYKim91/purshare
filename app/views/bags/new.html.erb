@@ -1,2 +1,11 @@
 <h1>Bags#new</h1>
-<p>Find me in app/views/bags/new.html.erb</p>
+<p>Submit new bag to be on rent!</p>
+
+<%= simple_form_for @bag do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price%>
+  <%= f.input :brand%>
+  <%= f.input :description%>
+  <%= f.input :image, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "Submit Bag", class: "btn btn-primary" %>
+<% end %>
