@@ -1,2 +1,7 @@
-<h1>Bags#show</h1>
-<p>Find me in app/views/bags/show.html.erb</p>
+<img src="<%= @bag.image %>" alt="Bag_image">
+<h1><%= @bag.name %></h1>
+<p><%= @bag.price %></p>
+<p><%= @bag.brand %></p>
+<p><%= @bag.description %></p>
+
+<%= link_to "RENT", bookings_new_path %>

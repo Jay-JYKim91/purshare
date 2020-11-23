@@ -3,6 +3,7 @@ class BagsController < ApplicationController
   end
 
   def show
+    @bag = Bag.find(params[:id])
   end
 
   def new
