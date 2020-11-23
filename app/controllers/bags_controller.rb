@@ -11,4 +11,9 @@ class BagsController < ApplicationController
 
   def create
   end
+
+  private
+  def bag_params
+    params.require(:bag).permit(:image)
+  end
 end
