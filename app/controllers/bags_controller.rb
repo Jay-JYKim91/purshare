@@ -1,5 +1,6 @@
 class BagsController < ApplicationController
   def index
+    @bags = Bag.all
   end
 
   def show
