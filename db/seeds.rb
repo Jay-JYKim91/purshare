@@ -16,7 +16,7 @@ user1 = User.create(
   password: "lewagon",
   first_name: "John",
   last_name: "Smith",
-  address: "seoul"
+  address: "seoul",
   email: "ssggg@gmail.com",
   password: "lewagon"
 )
