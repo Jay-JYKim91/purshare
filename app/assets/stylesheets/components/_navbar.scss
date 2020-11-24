@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #f6f1eb;
+  position: sticky;
+  top:0;
+  box-shadow: 0px 1px 5px -1px #f1ebe4;
 }
 
 .navbar-nav {
@@ -21,11 +24,11 @@
 
 .nav-item {
   font-family: Josefin Sans;
-    
+
   display: inline-block;
-  
+
   font-size: 20px;
-  
+
   padding: 20px;
 }
 
