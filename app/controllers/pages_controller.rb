@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @bags_post = Bag.where(user: current_user)
     authorize @bags_post
     @bags_rent = Booking.where(user_id: current_user)
-    authorize @bags_rent
+    # authorize @bags_rent
   end
 
   def edit
