@@ -104,12 +104,14 @@ booking2 = Booking.create(
   start_date: Date.today()-2,
   end_date: Date.today(),
   bag: bag2,
-  user: user2
+  user: user2,
+  approved: false
 )
 
 booking3 = Booking.create(
   start_date: Date.today()-3,
   end_date: Date.today(),
   bag: bag3,
-  user: user1
+  user: user1,
+  approved: true
 )
