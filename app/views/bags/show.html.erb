@@ -1,8 +1,13 @@
-<%= cl_image_tag(@bag.image.key,
-      width: 400, height: 300, crop: :fill) %>
-<h1><%= @bag.name %></h1>
-<p><%= @bag.price %></p>
-<p><%= @bag.brand %></p>
-<p><%= @bag.description %></p>
-
-<%= link_to "RENT", new_bag_booking_path(@bag) %>
+<div class="container container-bag-show">
+  <div class="bag_img">
+    <%= cl_image_tag(@bag.image.key,
+        width: 300, height: 400) %>
+  </div>
+  <div class="bag_desciption">
+    <h1><%= @bag.name %></h1>
+    <p><%= @bag.brand %></p>
+    <p><%= @bag.description %></p>
+    <p class="text-right">$ <%= @bag.price %> / 1 day</p>
+    <%= link_to "RENT", new_bag_booking_path(@bag), class: "btn btn-secondary" %>
+  </div>
+</div>
