@@ -1,8 +1,9 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="cotainer-form">
+  <h1>Booking form</h1>
 
-<%= simple_form_for [ @bag, @booking ] do |f| %>
-  <%= f.input :start_date, as: :date%>
-  <%= f.input :end_date, as: :date%>
-  <%= f.submit "Submit Booking", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [ @bag, @booking ] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+  <% end %>
+</div>
