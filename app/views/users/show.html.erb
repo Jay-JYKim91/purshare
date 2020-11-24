@@ -1,21 +1,27 @@
-<h1>Dashboard</h1>
-
-<p>List of rented bags:</p>
 
 
-<div class="user-info">
-  <%= @user.first_name %>
-  <%= @user.last_name %>
-  <%= @user.address %>
-</div>
-
-<div class="bags-list">
-  <div class="bags-rent">
-    <%= @borrowed_bag.name %>
+<div class="container">
+  <h1>Dashboard</h1>
+  <div class="user-info">
+    <h3>User Information</h3> 
+    <p><%= @user %></p>
   </div>
-  <div class="bags-borrow">
 
+  <div class="bags-list">
+    <div class="bags-own">
+      <h3>List of bags I own</h3> 
+      <div class="bags-card">
+        <% @bags_own.each do |bag| %>
+          <h5>Name: <%= bag.name %></h5> 
+          <p>Price: <%= bag.price %></p>
+          <p>Description: <%= bag.description %></p> 
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-<div class="requests">
+
+  <div class="requests">
+    <h3>List of pending requests</h3>
+  </div>
+
 </div>
