@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = current_user
-    # @borrowed_bag = Bag.find(params[:id])
   end
 end
