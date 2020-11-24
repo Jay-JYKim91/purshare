@@ -6,8 +6,9 @@
         width: 300, height: 400) %>
   </div>
 
-<%= simple_form_for [ @bag, @booking ] do |f| %>
-  <%= f.input :start_date, as: :date%>
-  <%= f.input :end_date, as: :date%>
-  <%= f.submit "Submit Booking", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [ @bag, @booking ] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+  <% end %>
+</div>
