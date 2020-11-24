@@ -1,19 +1,25 @@
 class BagsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @bags = Bag.all
+    @bags = policy_scope(Bag).order(created_at: :desc)
   end
 
   def show
     @bag = Bag.find(params[:id])
+    authorize @bag
   end
 
   def new
     @bag = Bag.new
+    authorize @bag
   end
 
   def create
     @bag = Bag.new(bag_params)
     @bag.user = current_user
+    authorize @bag
+
     if @bag.save
       redirect_to bags_path
     else
@@ -26,5 +32,5 @@ class BagsController < ApplicationController
   def bag_params
     params.require(:bag).permit(:name, :price, :brand, :description, :image)
   end
-  
+
 end
