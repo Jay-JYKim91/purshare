@@ -6,14 +6,21 @@
 
 <div class="cards">
   <% @bags.each do |bag|%>
-    <a href="bags/<%=bag.id %>">
-    <% if bag.image.attached? %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/v1606186067/<%=bag.image.key %>)">
-    <% else %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <% end %>
-      <%= bag.name%>:<br>  <%= bag.brand%>  
+    <div class="individual-card">
+      <a href="bags/<%=bag.id %>">
+      <% if bag.image.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/v1606186067/<%=bag.image.key %>)">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <% end %>
+        <% if bag.available %>
+        <% else %>
+          <p class="not-available">Currently <br> not availble</p>
+        <% end %>
+        <%= bag.name%>
+        <%= bag.brand%>  
+      </div>
+      </a>
     </div>
-    </a>
   <% end%>
 </div>
