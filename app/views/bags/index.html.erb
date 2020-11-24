@@ -5,11 +5,16 @@
 
 <div class="cards">
   <% @bags.each do |bag|%>
+
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <%= bag.name%>: <%= bag.price%> / <%= bag.brand%> / <%= bag.description%>
+
     <% if bag.image.attached? %>
-    <%= cl_image_tag bag.image.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/v1606186067/<%=bag.image.key %>)">
+    <% else %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
     <% end %>
+    <%= bag.name%>: <%= bag.price%> / <%= bag.brand%> / <%= bag.description%> 
   </div>
   <% end%>
 </div>
