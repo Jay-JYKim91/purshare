@@ -1,8 +1,14 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Book a rent for <%= @bag.name %> </h1>
+<p>Please enter the specific date to rent the purse.</p>
 
-<%= simple_form_for [ @bag, @booking ] do |f| %>
-  <%= f.input :start_date, as: :date%>
-  <%= f.input :end_date, as: :date%>
-  <%= f.submit "Submit Booking", class: "btn btn-primary" %>
-<% end %>
+  <div class="bag_img">
+    <%= cl_image_tag(@bag.image.key,
+        width: 300, height: 400) %>
+  </div>
+
+  <%= simple_form_for [ @bag, @booking ] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+  <% end %>
+</div>
