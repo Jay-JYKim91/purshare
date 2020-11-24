@@ -6,6 +6,11 @@
 
 <div class="cards">
   <% @bags.each do |bag|%>
+  <div class="individual-card">
+    <% if bag.available %>
+    <% else %>
+    <p class="notavailable">Currently<br>Not Available</p>
+    <% end %>
     <a href="bags/<%=bag.id %>">
     <% if bag.image.attached? %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/v1606186067/<%=bag.image.key %>)">
@@ -15,5 +20,7 @@
       <%= bag.name%>:<br>  <%= bag.brand%>  
     </div>
     </a>
+  </div>
+
   <% end%>
-</div>
+  </div>

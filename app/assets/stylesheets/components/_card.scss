@@ -19,7 +19,20 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
   }
+
+  .individual-card {
+    position: relative;
+  }
   
+  .notavailable {
+    position: absolute;
+    color:black;
+    background-color: white;
+    font-size:10px;
+    border-radius: 2px;
+    top: 10px; left: 10px;
+  }
+
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
     .cards {
