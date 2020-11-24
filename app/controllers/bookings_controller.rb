@@ -1,8 +1,11 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
+
   def new
     @bag = Bag.find(params[:bag_id])
-    @booking = Booking.new
+    @booking = policy_scope(Booking).new
+    authorize @booking
+    authorize @bag
   end
 
   def create
@@ -10,15 +13,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.bag = @bag
     @booking.user = current_user
+    authorize @booking
+    authorize @bag
+
     if @booking.save
-      redirect_to user_path(current_user.id)
+      redirect_to dashboard_path(current_user.id)
     else
       render :new
     end
   end
 
-
-  private 
+  private
 
   def booking_params
     params.require(:booking).permit(:start_time, :end_time, :bag_id)
