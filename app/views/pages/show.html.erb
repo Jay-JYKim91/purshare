@@ -8,28 +8,10 @@
   <hr>
 
   <div class="bags-list">
-    <div class="bags-rented">
-      <h3>List of bags I rented</h3> 
-      <div class="bags-card">
-       <% @bags_rent.each do |booking| %>
-          <h5>Name: <%= booking.bag.name %></h5> 
-          <p>Price: <%= booking.bag.price %></p>
-          <p>Start Date: <%= booking.start_date %></p>
-          <p>End Date: <%= booking.end_date %></p>
-          <%= cl_image_tag booking.bag.image.key, width: 400, height: 300, crop: :fill %>
-          <p>Description: <%= booking.bag.description %></p> 
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="bags-list">
      <div class="bags-posted">
       <h3>List of bags I posted</h3> 
       <div class="bags-card">
-        <% @bags_post.each do |bag| %>
+        <% @user.bags.each do |bag| %>
           <h5>Name: <%= bag.name %></h5> 
           <p>Price: <%= bag.price %></p>
           <%= cl_image_tag bag.image.key, width: 400, height: 300, crop: :fill %>
