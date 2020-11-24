@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "open-uri"
+require "date"
 
+Booking.destroy_all
 Bag.destroy_all
 User.destroy_all
 
@@ -17,8 +19,40 @@ user1 = User.create(
   first_name: "John",
   last_name: "Smith",
   address: "seoul",
-  password: "lewagon"
 )
+
+user2 = User.create(
+  email: "test@gmail.com",
+  password: "lewagon",
+  first_name: "Sarah",
+  last_name: "Kim",
+  address: "LA",
+)
+
+user3 = User.create(
+  email: "christine@gmail.com",
+  password: "lewagon",
+  first_name: "Christine",
+  last_name: "Jung",
+  address: "LA",
+)
+
+user4 = User.create(
+  email: "harry@gmail.com",
+  password: "lewagon",
+  first_name: "Harry",
+  last_name: "Kim",
+  address: "LA",
+)
+
+user5 = User.create(
+  email: "seyoung@gmail.com",
+  password: "lewagon",
+  first_name: "Seyoung",
+  last_name: "Joo",
+  address: "LA",
+)
+
 
 bag1 = Bag.new(
   name:"OPIDIA GG SMALL BAG",
@@ -51,9 +85,31 @@ bag3 = Bag.new(
   brand: "LOUIS VUITTON",
   price:2690,
   description: "Fashioned from Monogram Giant canvas, the Onthego tote bag is as striking as it is practical. A Monogram Reverse pattern on the sides and handles creates a stylish contrast in color and scale. With its generous capacity, shoulder straps and iconic Toron top handles, this versatile GM model is an ideal bag for everyday wear.",
-  user: user1
+  user: user2
   )
 
   file = URI.open('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')
   bag3.image.attach(io: file, filename: 'dior.png', content_type: 'image/png')
   bag3.save!
+
+booking1 = Booking.create(
+  start_date: Date.today()-5,
+  end_date: Date.today(),
+  bag: bag1,
+  user: user2
+  approved: true
+)
+
+booking2 = Booking.create(
+  start_date: Date.today()-2,
+  end_date: Date.today(),
+  bag: bag2,
+  user: user2
+)
+
+booking3 = Booking.create(
+  start_date: Date.today()-3,
+  end_date: Date.today(),
+  bag: bag3,
+  user: user1
+)
