@@ -1,0 +1,33 @@
+=> [[32m#<Bag:0x00007f521125e648[0m
+  id: [1;34m1[0m,
+  name: [31m[1;31m"[0m[31mOPIDIA GG SMALL BAG[1;31m"[0m[31m[0m,
+  price: [1;34m2000[0m,
+  brand: [31m[1;31m"[0m[31mGUCCI[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mGucci pays homage to their rich Italian heritage through iconic elements from the brand’s archives. The creative director explores new, modern paths to achieve this goal. Crafted from GG Supreme canvas, this small Ophidia GG shoulder bag from Gucci features an adjustable shoulder strap, a top zip fastening, a green and red Web, a metal Double G, gold-tone hardware, leather trims, internal slip pockets and Double G charms.[1;31m"[0m[31m[0m,
+  image: [1;36mnil[0m,
+  user_id: [1;34m1[0m,
+  created_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m03[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m03[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Bag:0x00007f52112de398[0m
+  id: [1;34m2[0m,
+  name: [31m[1;31m"[0m[31mMEDIUM LADY DIOR BAG[1;31m"[0m[31m[0m,
+  price: [1;34m4900[0m,
+  brand: [31m[1;31m"[0m[31mDIOR[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mA timeless and unique work of art, the Lady Dior bag is imbued with the Couture spirit of Dior. Meticulously crafted by hand, this black lambskin bag is enhanced by iconic Dior 'Cannage' stitching. It can be carried by hand or worn on the shoulder for unrivalled elegance.[1;31m"[0m[31m[0m,
+  image: [1;36mnil[0m,
+  user_id: [1;34m1[0m,
+  created_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m06[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m06[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Bag:0x00007f52112de280[0m
+  id: [1;34m3[0m,
+  name: [31m[1;31m"[0m[31mONTHEGO GM[1;31m"[0m[31m[0m,
+  price: [1;34m2690[0m,
+  brand: [31m[1;31m"[0m[31mLOUIS VUITTON[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mFashioned from Monogram Giant canvas, the Onthego tote bag is as striking as it is practical. A Monogram Reverse pattern on the sides and handles creates a stylish contrast in color and scale. With its generous capacity, shoulder straps and iconic Toron top handles, this versatile GM model is an ideal bag for everyday wear.[1;31m"[0m[31m[0m,
+  image: [1;36mnil[0m,
+  user_id: [1;34m2[0m,
+  created_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m09[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m24[0m [1;34;4mNov[0m [1;34m2020[0m [1;34m03[0m:[1;34m04[0m:[1;34m09[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]
