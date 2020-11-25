@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def show
     @user = current_user
     # authorize @user
+   
   end
 
   def edit

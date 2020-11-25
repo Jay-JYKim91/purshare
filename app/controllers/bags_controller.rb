@@ -7,6 +7,11 @@ class BagsController < ApplicationController
 
   def show
     @bag = Bag.find(params[:id])
+    @users = User.find(@bag.user_id)
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    
+    @markers = [{lat: @users.latitude, lng: @users.longitude}]
+
     authorize @bag
   end
 
