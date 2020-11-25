@@ -21,7 +21,6 @@
             <div class="bags-card">
               <% @user.bags.each do |bag| %>
                 <% bag.bookings.each do |booking| %>
-
                 <div class="for-flex">
                   <div>
                     <% if booking.approved %>
@@ -30,7 +29,7 @@
                       <p>Start Date: <%= booking.start_date %></p>
                       <p>End Date: <%= booking.end_date %></p>
                       <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            
+
                     <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
                     <%= submit_tag("Approve") %>
                     <% end %>
@@ -53,18 +52,24 @@
       <div class="bags-pending">
         <h3>List of my rental requests</h3>
         <div class="bags-card">
-          <% @user.bookings.each do |booking| %>
+          <div class="for-flex">
+           <% @user.bookings.each do |booking| %>
             <% if booking.approved %>
             <% else %>
-            <p>Start Date: <%= booking.start_date %></p>
+            <div>
+              <p>Start Date: <%= booking.start_date %></p>
               <p>End Date: <%= booking.end_date %></p>
               <p>Name: <%= booking.bag.name %></p>
               <p>Price: <%= booking.bag.price %></p>
               <p>Pending approval from the owner <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
-
-              <%= cl_image_tag booking.bag.image.key, width: 300, height: 200, crop: :fill %>
+            </div>
+            <div>
+              <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+            </div>
             <% end %>
           <% end %>
+          </div>
+
         </div>
       </div>
       <div class="bags-rented">
@@ -73,55 +78,52 @@
             <h3>List of bags I rented</h3>
             <div class="bags-card">
               <% @user.bookings.each do |booking| %>
-              <div class="for-flex">
-                <% if booking.approved %>
-                <div>
-                  <p>Name: <%= booking.bag.name %></p>
-                  <p>Start Date: <%= booking.start_date %></p>
-                  <p>End Date: <%= booking.end_date %></p>
-                  <p>Price: <%= booking.bag.price %></p>
+                <div class="for-flex">
+                  <% if booking.approved %>
+                    <div>
+                      <p>Name: <%= booking.bag.name %></p>
+                      <p>Start Date: <%= booking.start_date %></p>
+                      <p>End Date: <%= booking.end_date %></p>
+                      <p>Price: <%= booking.bag.price %></p>
+                    </div>
+                    <div>
+                      <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+                    </div>
+                  <% else %>
+                  <% end %>
                 </div>
-                <div>
-                  <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
-                </div>
-              </div>
-                <% else %>
-                <% end %>
               <% end %>
             </div>
           </div>
+
           <div>
-          <div class="bags-posted">
-          <h3>List of bags I posted</h3>
-          <div class="bags-card">
-            <% @user.bags.each do |bag| %>
-            <div class="for-flex">
-              <div>
-                <h5>Name: <%= bag.name %></h5>
-                <p>Price: <%= bag.price %></p>
-                <%= link_to "Edit this bag", edit_bag_path, class: "text-body" %>
-                <%= link_to "Delete this bag",
-                            bag_path(bag),
-                            method: :delete,
-                            data: { confirm: "Are you sure?" },
-                            class: "text-body" %>
+            <div class="bags-posted">
+              <h3>List of bags I posted</h3>
+              <div class="bags-card">
+                <% @user.bags.each do |bag| %>
+                  <div class="for-flex">
+                    <div>
+                      <h5>Name: <%= bag.name %></h5>
+                      <p>Price: <%= bag.price %></p>
+                      <%= link_to "Edit this bag", edit_bag_path, class: "text-body" %>
+                      <%= link_to "Delete this bag",
+                                  bag_path(bag),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" },
+                                  class: "text-body" %>
+                    </div>
+                    <div>
+                    <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
-              <div>
-              <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
-              </div>
-
-          </div>
-            <% end %>
-
-          </div>
-        </div>
+            </div>
           </div>
 
         </div>
-
-        </div>
-
-
       </div>
+    </div>
+  </div>
 </div>
 
