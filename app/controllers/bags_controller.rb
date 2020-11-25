@@ -27,6 +27,27 @@ class BagsController < ApplicationController
     end
   end
 
+  def edit
+    @bag = Bag.find(params[:id])
+    authorize @bag
+  end
+
+  def update
+    @bag = Bag.find(params[:id])
+    @bag.update(bag_params)
+    authorize @bag
+
+    redirect_to bag_path(@bag)
+  end
+
+  def destroy
+    @bag = Bag.find(params[:id])
+    @bag.destroy
+    authorize @bag
+
+    redirect_to dashboard_path
+  end
+
   private
 
   def bag_params

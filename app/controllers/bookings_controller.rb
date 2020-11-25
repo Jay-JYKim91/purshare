@@ -21,6 +21,12 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @bag = @booking.bag
+    @booking.destroy
+    redirect_to bag_path(@abg)
   end
 
   def approve
