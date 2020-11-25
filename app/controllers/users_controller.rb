@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   after_action :verify_policy_scoped, except: [:show]
   skip_before_action :authenticate_user!, only: [:show, :edit, :update]
 
+
   def show
     @user = current_user
     @bags_post = Bag.where(user: current_user)
