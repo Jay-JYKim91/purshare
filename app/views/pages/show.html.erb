@@ -17,10 +17,11 @@
 
   <div class="booking_list">
         <div class="bags-pending">
-          <h3>List of pending requests</h3>
+          <h3>List of others' requests pending my approval</h3>
             <div class="bags-card">
               <% @user.bags.each do |bag| %>
                 <% bag.bookings.each do |booking| %>
+
                 <div class="for-flex">
                   <div>
                     <% if booking.approved %>
@@ -29,6 +30,10 @@
                       <p>Start Date: <%= booking.start_date %></p>
                       <p>End Date: <%= booking.end_date %></p>
                       <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            
+                    <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
+                    <%= submit_tag("Approve") %>
+                    <% end %>
                   </div>
                   <div>
                     <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
@@ -36,6 +41,7 @@
                 </div>
                   <% else %>
                   <% end %>
+
                 <% end %>
               <% end %>
             </div>
@@ -44,6 +50,23 @@
 
   <div class="container-dashboard">
     <div class="container bags-list">
+      <div class="bags-pending">
+        <h3>List of my rental requests</h3>
+        <div class="bags-card">
+          <% @user.bookings.each do |booking| %>
+            <% if booking.approved %>
+            <% else %>
+            <p>Start Date: <%= booking.start_date %></p>
+              <p>End Date: <%= booking.end_date %></p>
+              <p>Name: <%= booking.bag.name %></p>
+              <p>Price: <%= booking.bag.price %></p>
+              <p>Pending approval from the owner <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
+
+              <%= cl_image_tag booking.bag.image.key, width: 300, height: 200, crop: :fill %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
       <div class="bags-rented">
         <div class="list-bags">
           <div>
