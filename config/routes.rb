@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
   get '/dashboard/:id', to: "pages#show", as: 'dashboard'
+
+  resources :bookings do
+    post 'approvals', to: 'bookings#approve'
+  end
+
+
   # get 'bookings/new'
   # get 'bookings/create'
   # get 'users/show'
