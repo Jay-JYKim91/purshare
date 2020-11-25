@@ -4,13 +4,16 @@
   position: sticky;
   top:0;
   box-shadow: 0px 1px 5px -1px #f1ebe4;
+  padding: 0 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .navbar-nav {
   text-align: center;
-
   margin: 0;
-
   padding: 0;
 }
 
@@ -23,12 +26,12 @@
 }
 
 .nav-item {
-  font-family: Josefin Sans;
-
+  font-family: 'Libre Baskerville', serif;
   display: inline-block;
-
-  font-size: 20px;
-
-  padding: 20px;
+  font-size: 25px;
+  padding: 10px;
 }
-
+.dropdown-item {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+}

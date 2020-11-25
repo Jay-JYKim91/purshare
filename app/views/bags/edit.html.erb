@@ -1,0 +1,10 @@
+<h1>Edit a bag</h1>
+
+<%= simple_form_for @bag do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price%>
+  <%= f.input :brand%>
+  <%= f.input :description%>
+  <%= f.input :image, as: :file %>
+  <%= f.submit "Submit Bag", class: "btn btn-primary" %>
+<% end %>

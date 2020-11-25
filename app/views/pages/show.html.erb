@@ -1,53 +1,39 @@
 <div class="container">
-  <h1>Dashboard</h1>
-
-  <div class="container-dashboard">
-
-    <div class="container user-info">
-      <h3>User Information</h3>
-      <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
-      <p>Address: <%= current_user.address %></p>
+  <h1 class="text-center dashboard">Dashboard</h1>
+  <div class="container user-info">
+    <div class="space-between">
+      <div>
+        <h3>User Information</h3>
+      </div>
+      <div>
+        <p><%= link_to "Edit your information", edit_user_path, class: "text-right text-body"%></p>
+      </div>
     </div>
+    <div>
+    <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <p>Address: <%= current_user.address %></p>
+    </div>
+  </div>
 
-    <div class="container bags-list">
-      <div class="bags-rented">
-        <h3>List of bags I rented</h3>
-        <div class="bags-card">
-          <% @user.bookings.each do |booking| %>
-            <% if booking.approved %>
-              <p>Start Date: <%= booking.start_date %></p>
-              <p>End Date: <%= booking.end_date %></p>
-              <p>Name: <%= booking.bag.name %></p>
-              <p>Price: <%= booking.bag.price %></p>
-              <%= cl_image_tag booking.bag.image.key, width: 400, height: 300, crop: :fill %>
-            <% else %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <div class="bags-posted">
-        <h3>List of bags I posted</h3>
-        <div class="bags-card">
-          <% @user.bags.each do |bag| %>
-            <h5>Name: <%= bag.name %></h5>
-            <p>Price: <%= bag.price %></p>
-            <%= cl_image_tag bag.image.key, width: 400, height: 300, crop: :fill %>>
-          <% end %>
-        </div>
-      </div>
-      <div class="booking_list">
+  <div class="booking_list">
         <div class="bags-pending">
           <h3>List of pending requests</h3>
             <div class="bags-card">
               <% @user.bags.each do |bag| %>
                 <% bag.bookings.each do |booking| %>
-                  <% if booking.approved %>
-                    <p>Name: <%= booking.bag.name %></p>
-                    <p>Price: <%= booking.bag.price %></p>
-                    <p>Start Date: <%= booking.start_date %></p>
-                    <p>End Date: <%= booking.end_date %></p>
-                    <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-                    <%= cl_image_tag bag.image.key, width: 400, height: 300, crop: :fill %>>
+                <div class="for-flex">
+                  <div>
+                    <% if booking.approved %>
+                      <p>Name: <%= booking.bag.name %></p>
+                      <p>Price: <%= booking.bag.price %></p>
+                      <p>Start Date: <%= booking.start_date %></p>
+                      <p>End Date: <%= booking.end_date %></p>
+                      <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                  </div>
+                  <div>
+                    <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                  </div>
+                </div>
                   <% else %>
                   <% end %>
                 <% end %>
@@ -55,5 +41,63 @@
             </div>
           </div>
         </div>
+
+  <div class="container-dashboard">
+    <div class="container bags-list">
+      <div class="bags-rented">
+        <div class="list-bags">
+          <div>
+            <h3>List of bags I rented</h3>
+            <div class="bags-card">
+              <% @user.bookings.each do |booking| %>
+              <div class="for-flex">
+                <% if booking.approved %>
+                <div>
+                  <p>Name: <%= booking.bag.name %></p>
+                  <p>Start Date: <%= booking.start_date %></p>
+                  <p>End Date: <%= booking.end_date %></p>
+                  <p>Price: <%= booking.bag.price %></p>
+                </div>
+                <div>
+                  <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+                </div>
+              </div>
+                <% else %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div>
+          <div class="bags-posted">
+          <h3>List of bags I posted</h3>
+          <div class="bags-card">
+            <% @user.bags.each do |bag| %>
+            <div class="for-flex">
+              <div>
+                <h5>Name: <%= bag.name %></h5>
+                <p>Price: <%= bag.price %></p>
+                <%= link_to "Edit this bag", edit_bag_path, class: "text-body" %>
+                <%= link_to "Delete this bag",
+                            bag_path(bag),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" },
+                            class: "text-body" %>
+              </div>
+              <div>
+              <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+              </div>
+
+          </div>
+            <% end %>
+
+          </div>
+        </div>
+          </div>
+
+        </div>
+
+        </div>
+
+
       </div>
 </div>
