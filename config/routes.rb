@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'bags#index'
 
-  resources :bags, only: [:index, :show, :new, :create] do
+  resources :bags do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:destroy]
   resources :users, only: [:show, :edit, :update]
   get '/dashboard/:id', to: "pages#show", as: 'dashboard'
+
+  resources :bookings do
+    post 'approvals', to: 'bookings#approve'
+  end
+
+
   # get 'bookings/new'
   # get 'bookings/create'
   # get 'users/show'

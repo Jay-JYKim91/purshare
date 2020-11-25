@@ -3,8 +3,40 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .index-container p {
     font-family: Josefin Sans;
+}
+.container-dashboard {
+  display: flex;
+
+}
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+}
+.user-info {
+  // border: 1px solid rgba(0, 0, 0, 0.5);
+  // border-radius: 4px;
+  margin-bottom: 10px;
+}
+.space-between {
+  display:flex;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+.list-bags {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+.dashboard {
+  font-family: 'Libre Baskerville', serif;
+}
+.for-flex {
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }

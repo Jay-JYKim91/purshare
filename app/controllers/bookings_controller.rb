@@ -21,11 +21,27 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @bag = @booking.bag
+    @booking.destroy
+    redirect_to bag_path(@abg)
+  end
+
+  def approve
+    @booking = Booking.find(params[:booking_id])
+    @bag = @booking.bag
+    @bag.available = false
+    @booking.approved = true
+    @booking.save
+    @bag.save
+    redirect_to dashboard_path(current_user.id)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :bag_id)
+    params.require(:booking).permit(:start_date, :end_date, :bag_id)
   end
 end

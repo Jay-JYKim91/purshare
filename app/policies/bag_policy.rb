@@ -5,6 +5,10 @@ class BagPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -14,10 +18,10 @@ class BagPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.user == @user
   end
 
   def destroy?
-    record.user == user
+    record.user == @user
   end
 end
