@@ -36,6 +36,16 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+.new-booking {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+}
+.grid-for-sign-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
