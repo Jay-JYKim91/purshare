@@ -6,7 +6,8 @@ const buildMap = (mapElement) => {
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [126.977966, 37.566536],
-    zoom: 9
+    zoom: 9,
+    style: 'mapbox://styles/woid1221/ckhyan2yy1mh41all3a3aym3y'
   });
 };
 
@@ -38,7 +39,7 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
-    
+
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
