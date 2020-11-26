@@ -28,21 +28,21 @@
             <div class="for-flex">
               <div>
               <% if booking.approved %>
+              <% else %>
                 <p>Name: <%= booking.bag.name %></p>
                 <p>Price: <%= booking.bag.price %> / day</p>
                 <p>Start Date: <%= booking.start_date %></p>
                 <p>End Date: <%= booking.end_date %></p>
                 <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
                 <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
-                  <%= submit_tag("Approve") %>
+                <%= submit_tag("Approve") %>
+                <% end %>
                 <% end %>
               </div>
               <div>
                 <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
               </div>
             </div>
-              <% else %>
-              <% end %>
           <% end %>
         <% end %>
       </div>
