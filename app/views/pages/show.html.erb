@@ -113,7 +113,7 @@
           <div>
             <p>Name: <%= bag.name %></p>
             <p>Price: $ <%= bag.price %> / day</p>
-            <%= link_to "Edit this bag", edit_bag_path, class: "text-body" %>
+            <%= link_to "Edit this bag", edit_bag_path(bag), class: "text-body" %>
             <%= link_to "Delete this bag",
                         bag_path(bag),
                         method: :delete,

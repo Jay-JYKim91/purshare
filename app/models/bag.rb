@@ -9,6 +9,6 @@ class Bag < ApplicationRecord
   pg_search_scope :search_by_name_and_brand,
                   against: [:name, :brand],
                   using: {
-                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                    tsearch: { prefix: true }
                   }
 end
