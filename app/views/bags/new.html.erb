@@ -6,7 +6,7 @@
     <%= f.input :price%>
     <%= f.input :brand%>
     <%= f.input :description%>
-    <%= f.input :image, as: :file %>
+    <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Submit Bag", class: "btn btn-primary" %>
   <% end %>
 </div>

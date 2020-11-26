@@ -56,7 +56,7 @@ bag1 = Bag.new(
   )
 
   file = URI.open('https://cdn-images.farfetch-contents.com/12/56/25/66/12562566_11923829_1000.jpg')
-  bag1.image.attach(io: file, filename: 'gucci.png', content_type: 'image/png')
+  bag1.images.attach(io: file, filename: 'gucci.png', content_type: 'image/png')
   bag1.save!
 
 
@@ -70,7 +70,7 @@ bag1 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80')
-  bag2.image.attach(io: file, filename: 'lv.png', content_type: 'image/png')
+  bag2.images.attach(io: file, filename: 'lv.png', content_type: 'image/png')
   bag2.save!
 
 
@@ -84,7 +84,7 @@ bag3 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')
-  bag3.image.attach(io: file, filename: 'dior.png', content_type: 'image/png')
+  bag3.images.attach(io: file, filename: 'dior.png', content_type: 'image/png')
   bag3.save!
 
 bag4 = Bag.new(
@@ -97,7 +97,7 @@ bag4 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1575032617751-6ddec2089882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-  bag4.image.attach(io: file, filename: 'hermes.png', content_type: 'image/png')
+  bag4.images.attach(io: file, filename: 'hermes.png', content_type: 'image/png')
   bag4.save!
 
 bag5 = Bag.new(
@@ -110,7 +110,7 @@ bag5 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80')
-  bag5.image.attach(io: file, filename: 'Ferragamo.png', content_type: 'image/png')
+  bag5.images.attach(io: file, filename: 'Ferragamo.png', content_type: 'image/png')
   bag5.save!
 
 bag6 = Bag.new(
@@ -123,7 +123,7 @@ bag6 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1601924921557-45e6dea0a157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
-  bag6.image.attach(io: file, filename: 'prada.png', content_type: 'image/png')
+  bag6.images.attach(io: file, filename: 'prada.png', content_type: 'image/png')
   bag6.save!
 
 booking1 = Booking.create(

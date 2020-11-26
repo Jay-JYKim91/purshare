@@ -1,9 +1,9 @@
 class Bag < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_one_attached :image
+  has_many_attached :images
 
-  validates :name, :price, :brand, :description, :image, presence: true
+  validates :name, :price, :brand, :description, :images, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_brand,
