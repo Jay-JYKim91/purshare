@@ -13,14 +13,7 @@ class BagsController < ApplicationController
 
   def show
     @bag = Bag.find(params[:id])
-    @owner = User.find(@bag.user_id)
-    @user = current_user
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
 
-    @markers = [{lat: @owner.latitude, lng: @owner.longitude, infoWindow: render_to_string(partial: "info_window", locals: { user: @owner }), 
-    image_url: helpers.asset_url('https://www.clipartmax.com/png/full/135-1354922_bags-woman-bag-icon-png.png')},
-     {lat: @user.latitude, lng: @user.longitude,infoWindow: render_to_string(partial: "info_window", locals: { user: @user }), 
-     image_url: helpers.asset_url('http://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Clipart.png')}]
     authorize @bag
   end
 
