@@ -40,7 +40,7 @@ bag1 = Bag.new(
   )
 
   file = URI.open('https://cdn-images.farfetch-contents.com/12/56/25/66/12562566_11923829_1000.jpg')
-  bag1.image.attach(io: file, filename: 'gucci.png', content_type: 'image/png')
+  bag1.images.attach(io: file, filename: 'gucci.png', content_type: 'image/png')
   bag1.save!
 
 
@@ -54,7 +54,7 @@ bag2 = Bag.new(
   )
 
   file = URI.open('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80')
-  bag2.image.attach(io: file, filename: 'lv.png', content_type: 'image/png')
+  bag2.images.attach(io: file, filename: 'lv.png', content_type: 'image/png')
   bag2.save!
 
 bag3 = Bag.new(
@@ -67,8 +67,9 @@ bag3 = Bag.new(
 )
 
 file = URI.open('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')
-bag3.image.attach(io: file, filename: 'dior.png', content_type: 'image/png')
+bag3.images.attach(io: file, filename: 'dior.png', content_type: 'image/png')
 bag3.save!
+
 
 bag4 = Bag.new(
 name:"Bolide 31 bag",
@@ -80,8 +81,9 @@ available: false
 )
 
 file = URI.open('https://images.unsplash.com/photo-1575032617751-6ddec2089882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-bag4.image.attach(io: file, filename: 'hermes.png', content_type: 'image/png')
+bag4.images.attach(io: file, filename: 'hermes.png', content_type: 'image/png')
 bag4.save!
+
 
 bag5 = Bag.new(
 name:"Evelyne III 29 bag",
@@ -92,8 +94,9 @@ user: user1,
 available: false
 )
 
+
 file = URI.open('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80')
-bag5.image.attach(io: file, filename: 'Ferragamo.png', content_type: 'image/png')
+bag5.images.attach(io: file, filename: 'Ferragamo.png', content_type: 'image/png')
 bag5.save!
 
 bag6 = Bag.new(
@@ -106,7 +109,7 @@ available: true
 )
 
 file = URI.open('https://images.unsplash.com/photo-1601924921557-45e6dea0a157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
-bag6.image.attach(io: file, filename: 'prada.png', content_type: 'image/png')
+bag6.images.attach(io: file, filename: 'prada.png', content_type: 'image/png')
 bag6.save!
 
 bag7 = Bag.new(
@@ -119,7 +122,7 @@ available: true
 )
 
 file = URI.open('https://s3.ap-northeast-2.amazonaws.com/productmain/20200821_637335671463253325_21141503_0.jpg')
-bag7.image.attach(io: file, filename: 'ysl.png', content_type: 'image/png')
+bag7.images.attach(io: file, filename: 'ysl.png', content_type: 'image/png')
 bag7.save!
 
 bag8 = Bag.new(
@@ -132,7 +135,7 @@ available: true
 )
 
 file = URI.open('https://cdn1.savoirflair.com/pictures/w/450/1/95/ffffff/wp-content/uploads/2020/07/NEO-CLASSIC-2.jpg?x88026')
-bag8.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag8.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag8.save!
     
 bag9 = Bag.new(
@@ -145,7 +148,7 @@ available: true
 )
 
 file = URI.open('https://www.chanel.com/images//t_fashion//q_auto,f_jpg,fl_lossy,dpr_2/w_320/large-classic-handbag-black-grained-calfskin-gold-tone-metal-grained-calfskin-gold-tone-metal-packshot-default-a58600y01864c3906-8812351422494.jpg')
-bag9.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag9.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag9.save!
 
 bag10 = Bag.new(
@@ -158,7 +161,7 @@ available: true
 )
 
 file = URI.open('https://www.thenationalnews.com/image/policy:1.862480:1558419579/wk-delvaux.jpg?f=16x9&w=1200&$p$f$w=fb0f2f5')
-bag10.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag10.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag10.save!
 
 bag11 = Bag.new(
@@ -171,7 +174,7 @@ available: true
 )
 
 file = URI.open('https://media-cdn.yoogiscloset.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/6/261605_01.jpg')
-bag11.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag11.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag11.save!
 
 bag12 = Bag.new(
@@ -184,7 +187,7 @@ available: true
 )
 
 file = URI.open('https://www.cblbags.com/wp-content/uploads/2016/12/bolso-chanel-timeless-double-flap-tweed-rosa-multicolor-fluor-general-1.jpg')
-bag12.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag12.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag12.save!
 
 bag13 = Bag.new(
@@ -197,7 +200,7 @@ available: true
 )
 
 file = URI.open('https://wwws.dior.com/couture/ecommerce/media/catalog/product/cache/1/zoom_image_1/3000x2000/17f82f742ffe127f42dca9de82fb58b1/P/x/1604954713_M0565OREY_M49E_E01_ZH.jpg')
-bag13.image.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
+bag13.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag13.save!
 
 booking1 = Booking.create(

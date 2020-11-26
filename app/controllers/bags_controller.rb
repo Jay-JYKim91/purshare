@@ -26,8 +26,10 @@ class BagsController < ApplicationController
     authorize @bag
 
     if @bag.save
+
       redirect_to bags_path
     else
+
       render :new
     end
   end
@@ -56,7 +58,7 @@ class BagsController < ApplicationController
   private
 
   def bag_params
-    params.require(:bag).permit(:name, :price, :brand, :description, :image)
+    params.require(:bag).permit(:name, :price, :brand, :description, images: [])
   end
 
 end
