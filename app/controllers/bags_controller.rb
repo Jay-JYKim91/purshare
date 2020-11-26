@@ -2,14 +2,20 @@ class BagsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @bags = policy_scope(Bag).order(created_at: :desc)
+    if params[:query].present?
+      @bags = Bag.search_by_name_and_brand(params[:query])
+      # authorize @bag
+    else
+      @bags = policy_scope(Bag).order(created_at: :desc)
+      # authorize @bag
+    end
   end
 
   def show
     @bag = Bag.find(params[:id])
     @users = User.find(@bag.user_id)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    
+
     @markers = [{lat: @users.latitude, lng: @users.longitude}]
 
     authorize @bag

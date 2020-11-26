@@ -6,6 +6,15 @@
 </div>
 
 <div class="container index-container">
+  <div class="search">
+    <%= form_tag bags_path, method: :get do %>
+    <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control",
+                        placeholder: "Put a name or brand of purse" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div class="cards">
     <% @bags.each do |bag|%>
     <div class="individual-card">
@@ -15,7 +24,7 @@
       <% end %>
       <a href="bags/<%=bag.id %>" class="text-decoration-none">
       <% if bag.image.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/v1606186067/<%=bag.image.key %>)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/<%=bag.image.key %>)">
       <% else %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <% end %>
