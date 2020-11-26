@@ -1,7 +1,7 @@
 class Bag < ApplicationRecord
   belongs_to :user
-  has_many :bookings
-  has_one_attached :image
+  has_many :bookings, dependent: :destroy
+  has_one_attached :image, dependent: :destroy
 
   validates :name, :price, :brand, :description, :image, presence: true
 

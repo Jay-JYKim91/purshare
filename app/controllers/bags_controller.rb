@@ -4,10 +4,8 @@ class BagsController < ApplicationController
   def index
     if params[:query].present?
       @bags = Bag.search_by_name_and_brand(params[:query])
-      # authorize @bag
     else
       @bags = policy_scope(Bag).order(created_at: :desc)
-      # authorize @bag
     end
   end
 
