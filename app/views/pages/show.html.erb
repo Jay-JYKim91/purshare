@@ -25,28 +25,39 @@
       <div class="bags-card">
         <% @user.bags.each do |bag| %>
           <% bag.bookings.each do |booking| %>
-            <div class="for-flex">
-              <div>
-              <% if booking.approved %>
-              <% else %>
-                <p>Name: <%= booking.bag.name %></p>
-                <p>Price: <%= booking.bag.price %> / day</p>
-                <p>Start Date: <%= booking.start_date %></p>
-                <p>End Date: <%= booking.end_date %></p>
-                <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-                <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
-                <%= submit_tag("Approve") %>
-                <% end %>
-                <% end %>
+            <% if booking.approved %>
+              <div class="for-flex">
+                <div>
+                  <p>Name: <%= booking.bag.name %></p>
+                  <p>Price: <%= booking.bag.price %> / day</p>
+                  <p>Start Date: <%= booking.start_date %></p>
+                  <p>End Date: <%= booking.end_date %></p>
+                  <p>Contact customer: <%= booking.user.email %></p>
+                </div>
+                <div>
+                  <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                </div>
               </div>
-              <div>
-                <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+            <% else %>
+              <div class="for-flex">
+                <div>
+                  <p>Name: <%= booking.bag.name %></p>
+                  <p>Price: <%= booking.bag.price %> / day</p>
+                  <p>Start Date: <%= booking.start_date %></p>
+                  <p>End Date: <%= booking.end_date %></p>
+                  <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                  <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
+                  <%= submit_tag("Approve") %>
+                </div>
+                <div>
+                  <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+        <% end %>
+        <% end %>
         <% end %>
       </div>
-    </div>
 
     <div class="dashboard_container" id="my_booking">
       <h3>List of my rental requests</h3>
