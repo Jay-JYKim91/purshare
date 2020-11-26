@@ -17,12 +17,12 @@
   <h2 class="heading">My Current Activity</h2>
   <div class="list mb-3" id="booking_list">
     <div class="dashboard_container" id="new_booking">
-      <h5>Others' requests pending my approval</h5>
+      <h4 class="text-center">Others' requests<br>pending my approval</h4>
       <div class="bags-card">
         <% @user.bags.each do |bag| %>
           <% bag.bookings.each do |booking| %>
             <% if booking.approved %>
-              <div class="for-flex">
+              <div class="for-grid-bag">
                 <div>
                   <p>Name: <%= booking.bag.name %></p>
                   <p>Price: $ <%= booking.bag.price %> / day</p>
@@ -36,7 +36,7 @@
                 </div>
               </div>
             <% else %>
-              <div class="for-flex">
+              <div class="for-grid-bag">
                 <div>
                   <p>Name: <%= booking.bag.name %></p>
                   <p>Price: $ <%= booking.bag.price %> / day</p>
@@ -57,41 +57,42 @@
       </div>
     </div>
     <div class="dashboard_container" id="my_booking">
-      <h5>My requests pending others' approval</h5>
+      <h4 class="text-center">My requests<br>pending others' approval</h4>
       <div class="bags-card">
-        <div class="for-flex">
-          <% @user.bookings.each do |booking| %>
-            <% if booking.approved %>
-            <% else %>
-            <div>
-              <p>Start Date: <%= booking.start_date %></p>
-              <p>End Date: <%= booking.end_date %></p>
-              <p>Name: <%= booking.bag.name %></p>
-              <p>Price: $ <%= booking.bag.price %> / day</p>
-              <p>Status: Pending approval from the owner <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
+        <% @user.bookings.each do |booking| %>
+          <% if booking.approved %>
+          <% else %>
+            <div class="for-grid-bag">
+              <div>
+                <p>Start Date: <%= booking.start_date %></p>
+                <p>End Date: <%= booking.end_date %></p>
+                <p>Name: <%= booking.bag.name %></p>
+                <p>Price: $ <%= booking.bag.price %> / day</p>
+                <p>Status: Pending approval from the owner <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
+              </div>
+              <div>
+                <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+              </div>
             </div>
-            <div>
-              <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
-            </div>
-            <% end %>
           <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
 
-<h2 class="heading">My Past Activity</h2>
-<div class="list mb-5" id="bags_list">
-  <div class="dashboard_container" id="bags-rented">
-    <h5>Bags I rented</h5>
-    <div class="bags-card">
+  <h2 class="heading">My Past Activity</h2>
+  <div class="list mb-5" id="bags_list">
+    <div class="dashboard_container" id="bags-rented">
+      <h4 class="text-center">Bags I rented</h4>
+      <div class="bags-card">
         <% @user.bookings.each do |booking| %>
           <% if booking.approved %>
-            <div class="for-flex">
+            <div class="for-grid-bag">
             <div>
               <p>Name: <%= booking.bag.name %></p>
               <p>Start Date: <%= booking.start_date %></p>
               <p>End Date: <%= booking.end_date %></p>
+              <p>Rent from: <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
               <p>Price: $ <%= booking.bag.price %> / day</p>
             </div>
             <div>
@@ -105,20 +106,21 @@
   </div>
 
   <div class="dashboard_container" id="bags-posted">
-    <h5>Bags I posted</h5>
+    <h4 class="text-center">Bags I posted</h4>
 
     <div class="bags-card">
       <% @user.bags.each do |bag| %>
-        <div class="for-flex">
+        <div class="for-grid-bag">
           <div>
             <p>Name: <%= bag.name %></p>
-            <p>Price: $ <%= bag.price %> / day</p>
-            <%= link_to "Edit this bag", edit_bag_path(bag), class: "text-body" %>
+            <p>Brand: <%= bag.brand %></p>
+            <p class="mb-2">Price: $ <%= bag.price %> / day</p>
+            <%= link_to "Edit this bag", edit_bag_path(bag), class: "btn btn-small my-1" %>
             <%= link_to "Delete this bag",
                         bag_path(bag),
                         method: :delete,
                         data: { confirm: "Are you sure?" },
-                        class: "text-body" %>
+                        class: "btn btn-small" %>
           </div>
           <div>
             <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
