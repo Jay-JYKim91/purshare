@@ -32,7 +32,7 @@
                   <p>Contact customer: <%= booking.user.email %></p>
                 </div>
                 <div>
-                  <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                  <%= cl_image_tag bag.images.first.key, width: 150, height: 150, crop: :fill %>
                 </div>
               </div>
             <% else %>
@@ -47,7 +47,7 @@
                   <%= submit_tag("Approve") %>
                 </div>
                 <div>
-                  <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                  <%= cl_image_tag bag.images.first.key, width: 150, height: 150, crop: :fill %>
                 </div>
               </div>
             <% end %>
@@ -71,7 +71,7 @@
                 <p>Status: Pending approval from the owner <%= booking.bag.user.first_name %> <%= booking.bag.user.last_name %></p>
               </div>
               <div>
-                <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+                <%= cl_image_tag booking.bag.images.first.key, width: 150, height: 150, crop: :fill %>
               </div>
             </div>
           <% end %>
@@ -96,7 +96,7 @@
               <p>Price: $ <%= booking.bag.price %> / day</p>
             </div>
             <div>
-              <%= cl_image_tag booking.bag.image.key, width: 150, height: 150, crop: :fill %>
+              <%= cl_image_tag booking.bag.images.first.key, width: 150, height: 150, crop: :fill %>
             </div>
           <% else %>
           <% end %>
@@ -123,7 +123,7 @@
                         class: "btn btn-small" %>
           </div>
           <div>
-            <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+            <%= cl_image_tag bag.images.first.key, width: 150, height: 150, crop: :fill %>
           </div>
         </div>
       <% end %>
