@@ -1,10 +1,10 @@
-<div class="container mb-5">
+<div class="container my-5">
   <h1>Book a rent for <%= @bag.name %> </h1>
   <p>Please enter the specific date to rent the purse.</p>
-    <div class="for-grid">
+    <div class="new-booking">
       <div class="bag_img">
         <%= cl_image_tag(@bag.image.key,
-            width: 350, height: 400) %>
+            width: :auto, crop: :scale, responsive: :true) %>
       </div>
       <div>
         <%= simple_form_for [ @bag, @booking ] do |f| %>

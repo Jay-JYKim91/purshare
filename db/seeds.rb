@@ -49,7 +49,7 @@ user5 = User.create(
 bag1 = Bag.new(
   name:"OPIDIA GG SMALL BAG",
   brand: "GUCCI",
-  price: 2000,
+  price: 46,
   description: "Gucci pays homage to their rich Italian heritage through iconic elements from the brand’s archives. The creative director explores new, modern paths to achieve this goal. Crafted from GG Supreme canvas, this small Ophidia GG shoulder bag from Gucci features an adjustable shoulder strap, a top zip fastening, a green and red Web, a metal Double G, gold-tone hardware, leather trims, internal slip pockets and Double G charms.",
   user: user1,
   available: false
@@ -63,7 +63,7 @@ bag1 = Bag.new(
   bag2 = Bag.new(
   name:"MEDIUM LADY DIOR BAG",
   brand: "DIOR",
-  price: 4900,
+  price: 58,
   description: "A timeless and unique work of art, the Lady Dior bag is imbued with the Couture spirit of Dior. Meticulously crafted by hand, this black lambskin bag is enhanced by iconic Dior 'Cannage' stitching. It can be carried by hand or worn on the shoulder for unrivalled elegance.",
   user: user1,
   available: true
@@ -77,7 +77,7 @@ bag1 = Bag.new(
 bag3 = Bag.new(
   name:"ONTHEGO GM",
   brand: "LOUIS VUITTON",
-  price: 2690,
+  price: 90,
   description: "Fashioned from Monogram Giant canvas, the Onthego tote bag is as striking as it is practical. A Monogram Reverse pattern on the sides and handles creates a stylish contrast in color and scale. With its generous capacity, shoulder straps and iconic Toron top handles, this versatile GM model is an ideal bag for everyday wear.",
   user: user2,
   available: true
@@ -90,7 +90,7 @@ bag3 = Bag.new(
 bag4 = Bag.new(
   name:"Bolide 31 bag",
   brand: "HERMES",
-  price: 8300,
+  price: 83,
   description: "Designed in 1923 for top drivers and long-distance travelers, this globe-trotting bag slips easily into any trunk. The zip fastener, brought back from America by Émile Hermès at the end of the 1910s, give it its legendary round-angled shape, and allow for quick access to the content. The Bolide bag comes in a travel bag and many-sized handbags. ",
   user: user2,
   available: true
@@ -103,7 +103,7 @@ bag4 = Bag.new(
 bag5 = Bag.new(
   name:"Evelyne III 29 bag",
   brand: "Ferragamo",
-  price: 3300,
+  price: 67,
   description: "Designed in 1923 for top drivers and long-distance travelers, this globe-trotting bag slips easily into any trunk. The zip fastener, brought back from America by Émile Hermès at the end of the 1910s, give it its legendary round-angled shape, and allow for quick access to the content. The Bolide bag comes in a travel bag and many-sized handbags. ",
   user: user1,
   available: true
@@ -116,9 +116,9 @@ bag5 = Bag.new(
 bag6 = Bag.new(
   name:"Bolide 31 bag",
   brand: "PRADA",
-  price: 4900,
+  price: 76,
   description: "Designed in 1923 for top drivers and long-distance travelers, this globe-trotting bag slips easily into any trunk. The zip fastener, brought back from America by Émile Hermès at the end of the 1910s, give it its legendary round-angled shape, and allow for quick access to the content. The Bolide bag comes in a travel bag and many-sized handbags.",
-  user: user2,
+  user: user3,
   available: true
   )
 
