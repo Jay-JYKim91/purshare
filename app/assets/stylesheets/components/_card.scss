@@ -35,15 +35,20 @@
     top: 10px; left: 10px;
   }
   .bags-card {
-    margin: 0 5px;
+    margin: 10px 5px;
   }
   .bags-card p {
     margin-bottom: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
   }
 
   .heading {
     margin-top: 50px;
     margin-bottom: 20px;
+    font-family: 'Libre Baskerville', serif;
+    color: #585858;
   }
 
   // Smallest device
