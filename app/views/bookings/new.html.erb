@@ -1,26 +1,24 @@
 <div class="container my-5">
   <h1>Book a rent for <%= @bag.name %> </h1>
   <p>Please enter the specific date to rent the purse.</p>
-    <div class="new-booking">
-      <div class="bag_img">
-        <%= cl_image_tag(@bag.image.key,
-            width: :auto, crop: :scale, responsive: :true) %>
-      </div>
-      <div>
-        <%= simple_form_for [ @bag, @booking ] do |f| %>
-          <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-          <%= f.submit "Submit Booking", class: "btn btn-primary" %>
-        <% end %>
+
+  <div class="new-booking">
+    <div>
+      <h5>Where is the bag now?</h5>
+      <div id="map"
+           style="width: 100%; height: 220px;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-</div>
-<br>
-<div class="container">
-<div id="map"
-     style="width: 100%; height: 400px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div>
+      <%= simple_form_for [ @bag, @booking ] do |f| %>
+        <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <p class="text-right">$ <%= @bag.price %> / day</p>
+        <%= f.submit "Submit Booking", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
   </div>
 
 </div>
