@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @bag = @booking.bag
     @booking.destroy
-    redirect_to bag_path(@abg)
+    redirect_to bag_path(@bag)
   end
 
   def approve

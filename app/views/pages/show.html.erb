@@ -1,26 +1,23 @@
 <div class="container">
-
   <h1 class="text-center dashboard">Dashboard</h1>
-
+  <h2 class="heading">User Information</h2>
   <div class="user-info">
     <div class="for-flex">
       <div>
-        <h3>User Information</h3>
+      <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+      <p>Address: <%= current_user.address %></p>
       </div>
       <div>
         <p><%= link_to "Edit your information", edit_user_path, class: "text-right text-body"%></p>
       </div>
     </div>
-    <div>
-    <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <p>Address: <%= current_user.address %></p>
-    </div>
   </div>
 
+<h2 class="heading">My Current Activity</h2>
   <div class="list mb-3" id="booking_list">
 
     <div class="dashboard_container" id="new_booking">
-      <h3>List of others' requests pending my approval</h3>
+      <h5>Others' requests pending my approval</h5>
 
       <div class="bags-card">
         <% @user.bags.each do |bag| %>
@@ -36,11 +33,11 @@
                 <p>Request from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
                 <%= form_with(url: "/bookings/#{booking.id}/approvals", method: "post") do %>
                 <%= submit_tag("Approve") %>
-                <% end %>
-                <% end %>
-              </div>
-              <div>
+                <div>
                 <%= cl_image_tag bag.image.key, width: 150, height: 150, crop: :fill %>
+                </div>
+                <% end %>
+                <% end %>
               </div>
             </div>
           <% end %>
@@ -49,7 +46,7 @@
     </div>
 
     <div class="dashboard_container" id="my_booking">
-      <h3>List of my rental requests</h3>
+      <h5>My requests pending others' approval</h5>
 
       <div class="bags-card">
         <div class="for-flex">
@@ -74,10 +71,10 @@
 
   </div>
 
+<h2 class="heading">My Past Activity</h2>
   <div class="list mb-5" id="bags_list">
-
     <div class="dashboard_container" id="bags-rented">
-      <h3>List of bags I rented</h3>
+      <h5>Bags I rented</h5>
 
       <div class="bags-card">
         <div class="for-flex">
@@ -100,13 +97,13 @@
     </div>
 
     <div class="dashboard_container" id="bags-posted">
-      <h3>List of bags I posted</h3>
+      <h5>Bags I posted</h5>
 
       <div class="bags-card">
         <% @user.bags.each do |bag| %>
           <div class="for-flex">
             <div>
-              <h5>Name: <%= bag.name %></h5>
+              <p>Name: <%= bag.name %></p>
               <p>Price: <%= bag.price %> / day</p>
               <%= link_to "Edit this bag", edit_bag_path, class: "text-body" %>
               <%= link_to "Delete this bag",
