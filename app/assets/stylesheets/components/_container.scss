@@ -31,6 +31,11 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
+.for-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
