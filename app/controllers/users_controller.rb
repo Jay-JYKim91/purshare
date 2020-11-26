@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  after_action :verify_policy_scoped, except: [:show]
+  after_action :verify_policy_scoped, except: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:show, :edit, :update]
 
 
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    authorize @user
   end
 
   def update
