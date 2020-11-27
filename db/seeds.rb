@@ -10,7 +10,7 @@ user1 = User.create(
   password: "lewagon",
   first_name: "John",
   last_name: "Smith",
-  address: "Gangnam",
+  address: "Gangnam-gu",
 )
 
 user2 = User.create(
@@ -18,7 +18,7 @@ user2 = User.create(
   password: "lewagon",
   first_name: "Sarah",
   last_name: "Kim",
-  address: "Dongdaemun",
+  address: "Dongdaemun-gu",
 )
 
 
@@ -27,7 +27,7 @@ user3 = User.create(
   password: "lewagon",
   first_name: "Harry",
   last_name: "Kim",
-  address: "Jamsil",
+  address: "Jamsil-dong",
 )
 
 bag1 = Bag.new(
