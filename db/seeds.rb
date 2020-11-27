@@ -190,19 +190,6 @@ file = URI.open('https://www.cblbags.com/wp-content/uploads/2016/12/bolso-chanel
 bag12.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
 bag12.save!
 
-bag13 = Bag.new(
-name:"Dior Lady D-light Bag",
-brand: "Dior",
-price: 65,
-description: "Medium bag blue denim",
-user: user2,
-available: true
-)
-
-file = URI.open('https://wwws.dior.com/couture/ecommerce/media/catalog/product/cache/1/zoom_image_1/3000x2000/17f82f742ffe127f42dca9de82fb58b1/P/x/1604954713_M0565OREY_M49E_E01_ZH.jpg')
-bag13.images.attach(io: file, filename: 'balenciaga.png', content_type: 'image/png')
-bag13.save!
-
 booking1 = Booking.create(
   start_date: Date.today()-5,
   end_date: Date.today(),
