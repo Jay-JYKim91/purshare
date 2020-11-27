@@ -22,7 +22,12 @@
 .navbar-brand img {
   width: 40px;
 }
-
+// #dropdown-p {
+//   font-family: 'Libre Baskerville', serif;
+//   padding: 4px 24px;
+//   margin-bottom: 0;
+//   color: rgba(0, 0, 0, 0.5);
+// }
 .nav-item {
   font-family: 'Libre Baskerville', serif;
   display: inline-block;
@@ -31,5 +36,12 @@
 }
 .dropdown-item {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 15px;
+  font-size: 25px;
+  font-family: 'Libre Baskerville', serif;
+}
+.same {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  font-family: 'Libre Baskerville', serif;
+  margin-bottom: 0;
 }
