@@ -9,7 +9,6 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-<!--        <p class="same">Signed in as<br><%= @current_user.first_name %> <%= @current_user.last_name %></p>-->
             <%= link_to "Dashboard", dashboard_path(current_user.id), class: "dropdown-item" %>
             <%= link_to "Add a new bag", new_bag_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
