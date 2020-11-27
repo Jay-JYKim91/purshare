@@ -1,6 +1,6 @@
 <div class="container for-grid my-5">
   <div class="bag_img">
-    <%= cl_image_tag(@bag.image.key, width: 350, height: 400) %>
+    <%= cl_image_tag(@bag.images.first.key, width: 350, height: 400) %>
   </div>
 
   <div class="bag_desciption">
@@ -10,4 +10,15 @@
     <p class="text-right">$ <%= @bag.price %> / day</p>
     <%= link_to "RENT", new_bag_booking_path(@bag), class: "btn btn-secondary" %>
   </div>
+</div>
+
+<div class="container">
+<% @bag.images.each do |image|%>
+  <% if image == @bag.images.first%>
+  <% else%>
+  <div class="bag_img">
+    <%= cl_image_tag(image.key, width: 350, height: 400) %>
+  </div>
+  <%end%>
+<%end%>
 </div>

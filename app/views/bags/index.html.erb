@@ -15,7 +15,7 @@
                         placeholder: "Put a name or brand of a purse" %>
     </div>
     <div class="search-btn">
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Search", class: "btn btn-secondary" %>
     <% end %>
     </div>
   </div>
@@ -27,8 +27,8 @@
         <p class="notavailable">Currently <br> Not Available</p>
       <% end %>
       <a href="bags/<%=bag.id %>" class="text-decoration-none">
-      <% if bag.image.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dfvzvxjua/image/upload/<%=bag.image.key %>)">
+      <% if bag.images.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bag.images.first.key, height: 300, width: 400, crop: :fill %>')">
       <% else %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <% end %>
